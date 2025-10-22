@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <!-- Fragmento del Navbar -->
+    <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" th:href="@{/}">
+                <i class="fas fa-mobile-alt me-2"></i>TechCell
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/productos}">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contacto}">Contacto</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/nosotros}">Nosotros</a>
+                    </li>
+                </ul>
+                
+                <!-- Mostrar botón Login si NO hay sesión -->
+                <div th:if="${usuarioLogueado == null}">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fas fa-user me-1"></i>Login
+                    </button>
+                </div>
+                
+                <!-- Mostrar nombre de usuario y cerrar sesión si HAY sesión -->
+                <div th:if="${usuarioLogueado != null}" class="d-flex align-items-center gap-3">
+                    <span class="text-white">
+                        <i class="fas fa-user-circle me-2"></i>
+                        Hola, <strong th:text="${usuarioLogueado.username}">Usuario</strong>
+                    </span>
+                    <a th:href="@{/login/cerrar}" class="btn btn-outline-light btn-sm">
+                        <i class="fas fa-sign-out-alt me-1"></i>Cerrar Sesión
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
