@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <!-- Fragmento del Navbar -->
     <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold fs-3" th:href="@{/}">
@@ -26,10 +25,6 @@
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{/contacto}">Contacto</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/nosotros}">Nosotros</a>
-                    </li>
                 </ul>
                 
                 <!-- Mostrar botón Login si NO hay sesión -->
@@ -39,15 +34,31 @@
                     </button>
                 </div>
                 
-                <!-- Mostrar nombre de usuario y cerrar sesión si HAY sesión -->
-                <div th:if="${usuarioLogueado != null}" class="d-flex align-items-center gap-3">
-                    <span class="text-white">
+                <!-- Menú desplegable si HAY sesión -->
+                <div th:if="${usuarioLogueado != null}" class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-user-circle me-2"></i>
                         Hola, <strong th:text="${usuarioLogueado.username}">Usuario</strong>
-                    </span>
-                    <a th:href="@{/login/cerrar}" class="btn btn-outline-light btn-sm">
-                        <i class="fas fa-sign-out-alt me-1"></i>Cerrar Sesión
-                    </a>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                        <li>
+                            <a class="dropdown-item" th:href="@{/perfil}">
+                                <i class="fas fa-user-edit me-2"></i>Tu Perfil
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal" data-bs-target="#eliminarCuentaModal">
+                                <i class="fas fa-user-times me-2"></i>Eliminar Cuenta
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" th:href="@{/login/cerrar}">
+                                <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

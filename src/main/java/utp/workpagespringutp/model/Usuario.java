@@ -1,36 +1,30 @@
 package utp.workpagespringutp.model;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "usuarios")
 public class Usuario {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-
+    private Long id;
+    
+    @Column(unique = true, nullable = false)
     private String username;
+    
+    @Column(nullable = false)
     private String password;
+    
+    @Column(nullable = false)
     private String email;
+    
+    @Column(nullable = false)
     private String nombreCompleto;
-    private String rol;
-
-    @OneToMany(
-            mappedBy = "usuario",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    private List<Factura> facturas = new ArrayList<>();
-
-    public void addFactura(Factura factura){
-        facturas.add(factura);
-        factura.setUsuario(this);
-    }
 }
