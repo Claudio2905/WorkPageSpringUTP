@@ -85,34 +85,6 @@
 
     <!-- Incluir Modales de Login -->
     <div th:replace="~{fragments/modales :: modales}"></div>
-    
-    <!-- Modal para confirmar eliminación de cuenta -->
-    <div class="modal fade" id="eliminarCuentaModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title">
-                        <i class="fas fa-exclamation-triangle me-2"></i>Confirmar Eliminación
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="fs-5">¿Estás seguro que deseas eliminar tu cuenta?</p>
-                    <p class="text-danger fw-bold">Esta acción no se puede deshacer. Todos tus datos serán eliminados permanentemente.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        <i class="fas fa-times me-2"></i>Cancelar
-                    </button>
-                    <form th:action="@{/perfil/eliminar}" method="post" style="display: inline;">
-                        <button type="submit" class="btn btn-danger">
-                            <i class="fas fa-trash me-2"></i>Sí, Eliminar Mi Cuenta
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>

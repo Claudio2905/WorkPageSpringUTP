@@ -21,11 +21,6 @@ public class UsuarioService {
         return true;
     }
     
-    // Verificar si un usuario existe
-    public boolean existeUsuario(String username) {
-        return usuarioRepository.existsByUsername(username);
-    }
-    
     // Iniciar sesión
     public boolean iniciarSesion(String username, String password) {
         Optional<Usuario> usuario = usuarioRepository.findByUsername(username);
