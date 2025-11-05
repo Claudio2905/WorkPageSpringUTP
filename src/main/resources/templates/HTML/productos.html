@@ -1,156 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechCell - Tienda de Celulares</title>
+    <title>Productos - TechCell</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/Styles.css">
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
 </head>
 <body>
-    <!-- Navbar -->
-    <div th:replace="~{fragments/navbar :: navbar}"></div>
+<!-- Navbar -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
 
-     <!-- Productos Section -->
-    <div class="container my-5" id="productos">
-        <h2 class="text-center mb-5 fw-bold">Nuestros Productos</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../IMG/iPhone15.png" width="140px" class="mb-3" >
-                        <h5 class="card-title">iPhone 15</h5>
-                        <h4 class="text-primary"> Precio: S/ 3,299.00</h4>
-                        <button class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../IMG/SAMSUNGS24.jpg" width="200px">
-                        <h5 class="card-title">Samsung Galaxy S24</h5>
-                        <h4 class="text-primary"> Precio: S/ 4,949.00</h4>
-                        <button class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../IMG/XIAOMI14.webp" width="200px">
-                        <h5 class="card-title">Xiaomi Mi 14</h5>
-                        <h4 class="text-primary"> Precio: S/ 1,129.00</h4>
-                        <button class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../IMG/MOTOROLAG73.jpg" width="200px">
-                        <h5 class="card-title">Motorola G73</h5>
-                        <h4 class="text-primary">Precio: S/ 1,271.00</h4>
-                        <button class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../IMG/MOTOROLAG85.jpg" width="200px">
-                        <h5 class="card-title">Motorola G85</h5>
-                        <h4 class="text-primary"> Precio: S/ 1,049.00</h4>
-                        <button class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../IMG/IPHONE14.jpg" width="150px">
-                        <h5 class="card-title">iPhone 14</h5>
-                        <h4 class="text-primary">Precio: S/ 2,129.00</h4>
-                        <button class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../IMG/AUDIFONOSJBL.jpg" width="150px">
-                        <h5 class="card-title">Audifonos JBL</h5>
-                        <h4 class="text-primary">Precio: S/ 800.00</h4>
-                        <button class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../IMG/AURICULARESBLUETOOH.jpg" width="150px">
-                        <h5 class="card-title">Auriculares bluetooth</h5>
-                        <h4 class="text-primary">Precio: S/ 1,150.00</h4>
-                        <button class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../IMG/CARGADORPORTATIL.jpg" width="150px">
-                        <h5 class="card-title">Cargador portatil</h5>
-                        <h4 class="text-primary">Precio: S/ 150.00</h4>
-                        <button class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../IMG/FUNDA.jpg" width="150px">
-                        <h5 class="card-title">Funda</h5>
-                        <h4 class="text-primary">Precio: S/ 100.00</h4>
-                        <button class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../IMG/SMARTWATCH.jpg" width="150px">
-                        <h5 class="card-title">Smartwatch</h5>
-                        <h4 class="text-primary">Precio: S/ 500.00</h4>
-                        <button class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../IMG/PARLANTEJBL.jpg" width="150px">
-                        <h5 class="card-title">Parlante JBL</h5>
-                        <h4 class="text-primary">Precio: S/ 1,250.00</h4>
-                        <button class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
+<!-- Incluir Mensajes -->
+<div th:replace="~{fragments/mensajes :: alertas}"></div>
 
+<!-- Productos Section -->
+<div class="container my-5" id="productos">
+    <h2 class="text-center mb-4 fw-bold">Nuestros Productos</h2>
+
+    <!-- Filtro de Categorías
+    <div class="row mb-4">
+        <div class="col-md-12 text-center">
+            <div class="btn-group" role="group">
+                <a th:href="@{/productos}"
+                   th:classappend="${categoriaSeleccionada == 'Todos'} ? 'active' : ''"
+                   class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-th me-2"></i>Todos
+                </a>
+                <a th:href="@{/productos(categoria='Celular')}"
+                   th:classappend="${categoriaSeleccionada == 'Celular'} ? 'active' : ''"
+                   class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-mobile-alt me-2"></i>Celulares
+                </a>
+                <a th:href="@{/productos(categoria='Accesorio')}"
+                   th:classappend="${categoriaSeleccionada == 'Accesorio'} ? 'active' : ''"
+                   class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-headphones me-2"></i>Accesorios
+                </a>
+            </div>
+        </div>
+    </div>-->
+
+    <!-- Lista de Productos -->
+    <div class="row">
+        <div th:if="${productos.isEmpty()}" class="col-12">
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle me-2"></i>
+                No hay productos disponibles en esta categoría.
+            </div>
+        </div>
+
+        <div th:each="producto : ${productos}" class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <img th:src="@{${producto.imagen}}"
+                         th:alt="${producto.nombre}"
+                         class="mb-3"
+                         style="max-width: 200px; max-height: 200px; object-fit: contain;">
+
+                    <h5 class="card-title" th:text="${producto.nombre}">Producto</h5>
+
+                    <h4 class="text-primary mb-3">
+                        Precio: S/ <span th:text="${#numbers.formatDecimal(producto.precio, 1, 2)}">0.00</span>
+                    </h4>
+
+                    <p class="text-muted mb-3">
+                        <i class="fas fa-box me-1"></i>
+                        Stock disponible: <strong th:text="${producto.stock}">0</strong>
+                    </p>
+
+                    <button th:if="${producto.stock > 0}"
+                            class="btn btn-primary agregar-carrito"
+                            th:data-producto-id="${producto.id}"
+                            th:data-producto-nombre="${producto.nombre}"
+                            th:data-producto-precio="${producto.precio}">
+                        <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                    </button>
+
+                    <button th:if="${producto.stock == 0}"
+                            class="btn btn-secondary"
+                            disabled>
+                        <i class="fas fa-times me-2"></i>Sin Stock
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-    <!-- Incluir Footer -->
-    <div th:replace="~{fragments/footer :: footer}"></div>
+<!-- Incluir Footer -->
+<div th:replace="~{fragments/footer :: footer}"></div>
 
-    <!-- Incluir Modales -->
-    <div th:replace="~{fragments/modales :: modales}"></div>
+<!-- Incluir Modales -->
+<div th:replace="~{fragments/modales :: modales}"></div>
 
-    
-    <!-- Incluir Botón WhatsApp -->
-    <div th:replace="~{fragments/botonwsp :: botonWhatsApp}"></div>
+<!-- Incluir Modal del Carrito -->
+<div th:replace="~{fragments/modalCarrito :: modalCarrito}"></div>
 
+<!-- Incluir Botón WhatsApp -->
+<div th:replace="~{fragments/botonwsp :: botonWhatsApp}"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/js/carrito.js}"></script>
 </body>
 </html>

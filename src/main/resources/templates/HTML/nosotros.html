@@ -251,11 +251,13 @@
     <!-- Incluir Modales -->
     <div th:replace="~{fragments/modales :: modales}"></div>
 
+    <div th:replace="~{fragments/modalCarrito :: modalCarrito}"></div>
 
     <!-- Incluir Botón WhatsApp -->
     <div th:replace="~{fragments/botonwsp :: botonWhatsApp}"></div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/js/carrito.js}"></script>
 </body>
 </html>

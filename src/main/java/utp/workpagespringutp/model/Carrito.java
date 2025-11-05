@@ -16,16 +16,17 @@ public class Carrito {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "usuario_id")
+    @OneToOne
+    @JoinColumn(name = "usuario_id", unique = true)
     private Usuario usuario;
 
     @OneToMany(
             mappedBy = "carrito",
             cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
     )
-    private List<ItemCarrito> itemCarritos =  new ArrayList<>();
+    private List<ItemCarrito> itemCarritos = new ArrayList<>();
 
     public void addItemCarrito(ItemCarrito itemCarrito){
         itemCarritos.add(itemCarrito);
@@ -40,5 +41,4 @@ public class Carrito {
     public void vaciarCarrito(){
         itemCarritos.clear();
     }
-
 }

@@ -14,12 +14,6 @@ public class HtmlController {
         return "html/index";
     }
 
-    @GetMapping("/productos")
-    public String productos(HttpSession session, Model model) {
-        model.addAttribute("usuarioLogueado", session.getAttribute("usuarioLogueado"));
-        return "html/productos";
-    }
-
     @GetMapping("/contacto")
     public String contacto(HttpSession session, Model model) {
         model.addAttribute("usuarioLogueado", session.getAttribute("usuarioLogueado"));
