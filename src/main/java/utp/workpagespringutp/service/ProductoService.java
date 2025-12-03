@@ -53,4 +53,27 @@ public class ProductoService {
             productoRepository.save(producto);
         }
     }
+
+    // Métodos para administrador
+
+    public Producto guardarProducto(Producto producto) {
+        return productoRepository.save(producto);
+    }
+
+    public void actualizarProducto(Producto producto) {
+        productoRepository.save(producto);
+    }
+
+    public void eliminarProducto(Long id) {
+        productoRepository.deleteById(id);
+    }
+
+    public void actualizarStock(Long id, Integer nuevoStock) {
+        Optional<Producto> productoOpt = productoRepository.findById(id);
+        if (productoOpt.isPresent()) {
+            Producto producto = productoOpt.get();
+            producto.setStock(nuevoStock);
+            productoRepository.save(producto);
+        }
+    }
 }
